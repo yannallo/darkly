@@ -1,0 +1,1 @@
+On the signin page, we can use a script that attempts to log in as the admin user by testing the 10,000 most common passwords through a brute-force attack.

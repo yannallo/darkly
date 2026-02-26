@@ -1,11 +1,16 @@
- grace aux commentaires de la page avec l'albatros, on apprend qu'on doit arriver sur la page depuis https://www.nsa.gov/ avec le navigateur "ft_borntoSec"
+Thanks to the comments on the page with the albatross, we learn that we must access the page from https://www.nsa.gov/ using the browser "ft_bornToSec".
 
-" You must come from : "https://www.nsa.gov/". "
+"You must come from: https://www.nsa.gov/"
 
-" Let's use this browser : "ft_bornToSec". It will help you a lot. "
+"Let's use this browser: ft_bornToSec. It will help you a lot."
 
-on devine qu'on doit envoyer une requete spéciale en modifiant les champs Referer et User-agent qui correspondent respectivement à la page référente à partir duquelle les personnes accèdent à la page pour 'Referer'; et le navigateur (browser) depuis lequel une personne se connecte à la page (user-agent)
+We can deduce that we need to send a special request by modifying the Referer and User-Agent headers.
 
-commande complète
+Referer corresponds to the referring page from which users access the page.
 
-curl 'http://192.168.1.33/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f' -H 'User-Agent: ft_bornToSec' -H 'Referer: https://www.nsa.gov/'
+User-Agent corresponds to the browser used to access the page.
+
+Full command:
+curl 'http://192.168.1.33/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f' \
+  -H 'User-Agent: ft_bornToSec' \
+  -H 'Referer: https://www.nsa.gov/'
